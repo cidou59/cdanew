@@ -1,0 +1,28 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+                   http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+             
+    <persistence-unit name="magasin">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        
+        <class>fr.magasin.DAO.User</class> 
+        <class>fr.magasin.DAO.UserInformations</class> 
+        <class>fr.magasin.DAO.Acces</class>
+        <class>fr.magasin.DAO.Reservation</class>
+        
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> <!-- DB Driver -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost/magasin?currentSchema=magasin2" /> <!-- BD Mane -->
+            <property name="javax.persistence.jdbc.user" value="gestionnaire" /> <!-- DB User -->
+            <property name="javax.persistence.jdbc.password" value="123456" /> <!-- DB Password -->
+            <property name="hibernate.temp.use_jdbc_metadata_defaults" value = "false" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/> <!-- DB Dialect -->
+            <!-- <property name="hibernate.hbm2ddl.auto" value="update" /> --> <!-- create / create-drop / update -->
+            
+            <!-- <property name="hibernate.show_sql" value="true" />-->  <!-- Show SQL in console --> 
+        </properties>
+    </persistence-unit>
+    
+</persistence>
